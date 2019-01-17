@@ -24,8 +24,8 @@ def average_color_url(url):
     peak = codes[index_max]
     peak = peak.astype(int)
     colour = ''.join(format(c, '02x') for c in peak)
-    return colour[0:6]
+    return tuple(int(colour[i:i + 2], 16) for i in (0, 2, 4))
 
-# average_color_url(" https://images.discordapp.net/avatars/129706966460137472/3db67b0f41b3b9de89469c63040fa918")
+# print(average_color_url("https://cdn.discordapp.com/avatars/473868086773153793/75ead46e98ef610df627a2a187b56e9a.png"))
 
 
