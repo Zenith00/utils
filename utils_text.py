@@ -42,6 +42,7 @@ def multi_regex(reg_list, string):
     return False
 
 def format_rows(list_of_rows):
+    list_of_rows = [list(map(str, lst)) for lst in list_of_rows]
     widths = generate_widths(list_of_rows=list_of_rows)
     list_of_blocks = []
     block = ""
